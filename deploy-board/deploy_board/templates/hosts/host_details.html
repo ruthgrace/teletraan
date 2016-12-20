@@ -90,7 +90,7 @@
         {% if value|getType == 'dict' %}
         <div>
             {% for k, v in value.items %}
-                {% if k == 'Phobos Link' %}
+                {% if smart_str(k).strip() == "Phobos Link" %}
                     <i>{{ k }}: </i><a href="{{ v }}">,
                 {% else %}
                     <i>{{ k }}: </i>{{ v }},
